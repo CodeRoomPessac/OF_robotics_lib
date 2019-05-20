@@ -1,0 +1,5 @@
+title: Orange Robotics Library
+logo: /images/readme/logo_orange.png
+description: Une librairie Orange pour la robotique utilisant Arduino et mBlock basée sur les composants [Grove Seeed](http://wiki.seeedstudio.com/).
+show_downloads: true
+theme: jekyll-theme-minimal
