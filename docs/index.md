@@ -1,3 +1,8 @@
 ---
-title:  Orange Robotics Library
+layout: default
+title: Orange Robotics Library
 ---
+
+# Getting Started #
+
+blablabla
