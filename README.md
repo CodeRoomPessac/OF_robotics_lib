@@ -1,4 +1,4 @@
-## Orange Robotics Lib ##
+## Orange Robotics Library ##
 
 <a href="https://www.orange.fr/portail"><img src="/images/logo_orange.png" alt="Orange" width="60" height="60"></a> <a href="https://www.arduino.cc/"><img src="/images/arduino_logo.png" alt="Arduino" width="141" height="60"></a><a href="http://wiki.seeedstudio.com/"><img src="/images/seeed_logo.png" alt="Grove Seeed" width="60" height="60"></a>
 
