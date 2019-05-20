@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## Orange Robotics Lib ##
 
-You can use the [editor on GitHub](https://github.com/CodeRoomPessac/OF_robotics_lib/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<a href="https://www.orange.fr/portail"><img src="/Documentation/images/readme/logo_orange.png" alt="Orange" width="60" height="60"></a>	<a href="https://www.arduino.cc/"><img src="/Documentation/images/readme/arduino_logo.png" alt="Arduino" width="141" height="60"></a><a href="http://wiki.seeedstudio.com/"><img src="/Documentation/images/readme/seeed_logo.png" alt="Grove Seeed" width="60" height="60"></a> 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+Une librairie Orange pour la robotique utilisant Arduino et mBlock basée sur les composants [Grove Seeed](http://wiki.seeedstudio.com/).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Vous pourrez retrouver tout ce qui peut-être utilisé avec cette librarie dans le [pack électronique et motorisation](https://www.generationrobots.com/fr/403305-pack-electronique-et-motorisation-pour-challenge-rescue-de-la-robocup-junior.html) de [generation robots](https://www.generationrobots.com/fr/).
 
-```markdown
-Syntax highlighted code block
+### Dans ce dépôt vous trouverez : ###
+* **code :**
+	* **C - Arduino :** Des exemples de code en C pour utiliser les composants Grove Seeed, ainsi que les librairies nécessaires.
+	* **mBlock3 :** La librairie mBlock permettant de coder une carte Arduino Mega et les composants Grove Seeed avec le langage mBlock.
+* **docs :** La documentation concernant les différents composants et comment les utiliser.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CodeRoomPessac/OF_robotics_lib/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
