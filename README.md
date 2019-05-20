@@ -1,6 +1,6 @@
 ## Orange Robotics Lib ##
 
-<a href="https://www.orange.fr/portail"><img src="/Documentation/images/readme/logo_orange.png" alt="Orange" width="60" height="60"></a>	<a href="https://www.arduino.cc/"><img src="/Documentation/images/readme/arduino_logo.png" alt="Arduino" width="141" height="60"></a><a href="http://wiki.seeedstudio.com/"><img src="/Documentation/images/readme/seeed_logo.png" alt="Grove Seeed" width="60" height="60"></a> 
+<a href="https://www.orange.fr/portail"><img src="/docs/images/readme/logo_orange.png" alt="Orange" width="60" height="60"></a>	<a href="https://www.arduino.cc/"><img src="/docs/images/readme/arduino_logo.png" alt="Arduino" width="141" height="60"></a><a href="http://wiki.seeedstudio.com/"><img src="/docs/images/readme/seeed_logo.png" alt="Grove Seeed" width="60" height="60"></a> 
 
 
 Une librairie Orange pour la robotique utilisant Arduino et mBlock basée sur les composants [Grove Seeed](http://wiki.seeedstudio.com/).
