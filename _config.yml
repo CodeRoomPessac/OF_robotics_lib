@@ -2,6 +2,3 @@ title: Orange Robotics Library
 description: Une librairie Orange pour la robotique utilisant Arduino et mBlock basée sur les composants [Grove Seeed](http://wiki.seeedstudio.com/).
 show_downloads: true
 theme: jekyll-theme-minimal
-
-Un autre lien
-[Capteur Distance](./capteur_distance.md)
