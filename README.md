@@ -11,5 +11,4 @@ Vous pourrez retrouver tout ce qui peut-être utilisé avec cette librarie dans 
 * **code :**
 	* **C - Arduino :** Des exemples de code en C pour utiliser les composants Grove Seeed, ainsi que les librairies nécessaires.
 	* **mBlock3 :** La librairie mBlock permettant de coder une carte Arduino Mega et les composants Grove Seeed avec le langage mBlock.
-* **docs :** La documentation concernant les différents composants et comment les utiliser.
 
