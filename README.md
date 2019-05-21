@@ -21,7 +21,7 @@ Vous pouvez retrouver la correspondance entre les noms des fichiers(présents da
 * encodeur <==> Encoder
 * gyro_accelero <==> SparkFunLSM6DS3
 * moteur <==> Grove\_I2C\_Motor_Driver
-* capteur couleur <==> Adafruit_TCS34725.cpp
+* capteur couleur <==> Adafruit_TCS34725
 
 ### Utilisation de la bibliothèque dans mBlock3 ###
 
