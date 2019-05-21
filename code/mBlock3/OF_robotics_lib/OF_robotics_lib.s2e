@@ -1,0 +1,356 @@
+/*
+Orange block library for mblock
+
+Copyright 2019 Orange
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
+
+
+{	"extensionName": "OF Robotics Lib",
+	"description": "Orange extension for robotics using Arduino Board",
+	"version": "2.0",
+	"author": "Thibault THETIER",
+	"homepage": "",
+	"sort":0,
+	"javascriptURL":"js/OF_robotics_lib.js",
+  "firmware":"1.0",
+  "extensionPort":0,
+	"blockSpecs": [
+		["h","Début du programme","runArduino"],
+		[
+			"w",
+			"blink",
+			"blink",
+			{
+				"setup":"pinMode(13,OUTPUT);\n",
+				"inc":"#include \"blink.h\"",
+				"def":"BlinkClass led; \n",
+				"work":"led.blink();\n",
+				"loop":""
+			}
+		],
+/**************************************************************************/
+/*!
+    CAPTEUR DE DISTANCE ULTRASON
+*/
+/**************************************************************************/
+		[
+			"r",
+			"Valeur du capteur distance sur la broche D%n",
+			"Valeur du capteur distance sur la broche",
+			"8",
+			{
+				"setup":"",
+				"inc":"#include \"capteur_ultrason.h\"\n",
+				"def":"Ultrasonic ultrasonic_{0}({0});\n",
+				"work":"ultrasonic_{0}.MeasureInCentimeters()",
+				"loop":""
+			}
+		],
+/**************************************************************************/
+/*!
+    CAPTEUR DE LIGNE
+*/
+/**************************************************************************/
+		[
+			"r",
+			"Valeur du capteur de ligne sur la broche D%n",
+			"Valeur du capteur de ligne sur la broche",
+			"8",
+			{
+				"setup":"",
+				"inc":"",
+				"def":"",
+				"work":"digitalRead({0})",
+				"loop":""
+			}
+		],
+/**************************************************************************/
+/*!
+    MULTIPLEXEUR I2C
+*/
+/**************************************************************************/
+		[
+			"w",
+			"Multiplexeur I2C : Port %n à l'adresse %n",
+			"Multiplexeur I2C",
+			"0",
+			"0x70",
+			{
+				"setup":"",
+				"inc":"\n#include <Wire.h>\n",
+				"def":"\n
+#define TCAADDR {1}\n
+void tcaselect(uint8_t i)
+{
+if(i>7) return;
+Wire.beginTransmission(TCAADDR);
+Wire.write(1<<i);
+Wire.endTransmission();
+}\n",
+				"work":"tcaselect({0});\n",
+				"loop":""
+			}
+		],
+/**************************************************************************/
+/*!
+    CAPTEUR COULEURS
+*/
+/**************************************************************************/
+
+		[
+			"w",
+			"Initialisation capteur couleur",
+			"Initialisation capteur couleur",
+			"8",
+			{
+				"setup":"",
+				"inc":"#include \"capteur_couleur.h\"\n",
+				"def":"Adafruit_TCS34725 color_sensor = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);\nbyte gammatable[256];\n",
+				"work":"color_sensor.begin();\n",
+				"loop":""
+			}
+		],
+		[
+			"r",
+			"Valeur ROUGE du capteur de couleur",
+			"Valeur ROUGE du capteur de couleur",
+			{
+				"setup":"
+\nfor (int i=0; i<256; i++) 
+{
+float x = i;
+x /= 255;
+x = pow(x, 2.5);
+x *= 255; 
+gammatable[i] = x;
+}\n",
+				"inc":"",
+				"def":"",
+				"work":"color_sensor.RedValue(gammatable)",
+				"loop":""
+			}
+		],
+		[
+			"r",
+			"Valeur VERT du capteur de couleur",
+			"Valeur VERT du capteur de couleur",
+			{
+				"setup":"
+\nfor (int i=0; i<256; i++) 
+{
+float x = i;
+x /= 255;
+x = pow(x, 2.5);
+x *= 255; 
+gammatable[i] = x;
+}\n",
+				"inc":"",
+				"def":"",
+				"work":"color_sensor.GreenValue(gammatable)",
+				"loop":""
+			}
+		],
+		[
+			"r",
+			"Valeur BLEU du capteur de couleur",
+			"Valeur BLEU du capteur de couleur",
+			{
+				"setup":"
+\nfor (int i=0; i<256; i++) 
+{
+float x = i;
+x /= 255;
+x = pow(x, 2.5);
+x *= 255; 
+gammatable[i] = x;
+}\n",
+				"inc":"",
+				"def":"",
+				"work":"color_sensor.BlueValue(gammatable)",
+				"loop":""
+			}
+		],
+/**************************************************************************/
+/*!
+    6-AXIS ACCELEROMETER/GYROSCOPE
+*/
+/**************************************************************************/
+		[
+			"r",
+			"Imu %d.imu",
+			"read IMU",
+			"Accelero X",
+			{
+				"setup":" myIMU.begin();\n",
+				"inc":"\n#include \"gyro_accelero.h\"\n",
+				"def":"LSM6DS3 myIMU( 0x6A );\n ",
+				"work":"myIMU.mblocCall({0})",
+				"loop":""
+			}
+		],
+		
+/**************************************************************************/
+/*!
+    TEMPERATURE
+*/
+/**************************************************************************/
+		[
+			"r",
+			"Temperature Objet sur les broches A%n et A%n",
+			"Capteur Temperature Objet",
+			"0",
+			"1",
+			{
+				"setup":"TempSensor.setup({0},{1});\n",
+				"inc":"\n#include \"capteur_temperature.h\"\n",
+				"def":"Temp_sensor TempSensor;\n ",
+				"work":"TempSensor.measureObjectTemp()",
+				"loop":""
+			}
+		],
+		[
+			"r",
+			"Temperature Environnante sur les broches A%n et A%n",
+			"Capteur Temperature Environs",
+			"0",
+			"1",
+			{
+				"setup":"TempSensor.setup({0},{1});\n",
+				"inc":"\n#include \"capteur_temperature.h\"\n",
+				"def":"Temp_sensor TempSensor;\n ",
+				"work":"TempSensor.measureSurTemp()",
+				"loop":""
+			}
+		],
+
+/**************************************************************************/
+/*!
+    LCD RGB
+*/
+/**************************************************************************/
+		[
+			"w",
+			"Change la couleur du fond d'écran : R %n, V : %n, B : %n",
+			"Change la couleur du fond d'écran",
+			"0",
+			"0",
+			"127",
+			{
+				"setup":"lcd.begin(16, 2);\n",
+				"inc":"#include \"rgb_lcd.h\"\n",
+				"def":"rgb_lcd lcd;\n",
+				"work":"lcd.setRGB({0}, {1}, {2});\n",
+				"loop":""
+			}
+		],
+		[
+			"w",
+			"Écrit sur l'écran %s sur la ligne %n dans la colonne %n",
+			"Écrit sur l'écran",
+			"texte",
+			"0",
+			"0",
+			{
+				"setup":"lcd.begin(16, 2);\n",
+				"inc":"#include \"rgb_lcd.h\"\n",
+				"def":"rgb_lcd lcd;\n",
+				"work":"lcd.setCursor({2}, {1});\nlcd.print({0});\n",
+				"loop":""
+			}
+		],
+		[
+			"w",
+			"Efface l'écran",
+			"Efface l'écran",
+			{
+				"setup":"",
+				"inc":"#include \"rgb_lcd.h\"\n",
+				"def":"rgb_lcd lcd;\n",
+				"work":"lcd.clear();\n",
+				"loop":""
+			}
+		],
+/**************************************************************************/
+/*!
+    MOTEURS DC & CODEURS
+*/
+/**************************************************************************/
+		["r",
+		"Valeur du codeur moteur sur les broches D%n et D%n",
+		"Read encoder",
+		"1",
+		"2",
+		{
+			"setup":"",
+			"inc":"\n#include \"encodeur.h\"\n",
+			"def":"Encoder knobLeft_{0}_{1}({0},{1});\n",
+			"work":"knobLeft_{0}_{1}.read()",
+			"loop":""
+		}
+		],
+		
+		["w",
+		"Change la vitesse du moteur %d.moteurs à l'adresse %s à %n \%",
+		"set motor speed",
+		"1",
+		"0x0f",
+		"70",
+		{
+			"setup":"my_driver_motor_{0}.begin({0});\n",
+			"inc":"\n#include \"moteur.h\"\n",
+			"def":"I2CMotorDriver my_driver_motor_{0};\n",
+			"work":"my_driver_motor_{0}.speed({1}, {2});\n",
+			"loop":""
+		}
+		],
+
+		["w",
+		"Stop le moteur %d.moteurs à l'adresse %s",
+		"stop motor speed",
+		"1",
+		"0x0f",
+		{
+			"setup":"my_driver_motor_{0}.begin({0});\n",
+			"inc":"\n#include \"moteur.h\"\n",
+			"def":"I2CMotorDriver my_driver_motor_{0};\n",
+			"work":"my_driver_motor_{0}.stop({1});\n",
+			"loop":""
+		}
+		]
+	],
+	"menus": { "moteurs" : ["1","2"],
+				"imu":["Accelero X","Accelero Y","Accelero Z",
+						"Gyro X","Gyro Y","Gyro Z",
+						"Temperature C","Temperature F"]
+	},
+	"values":{
+		"Accelero X":1,
+		"Accelero Y":2,
+		"Accelero Z":3,
+		"Gyro X":4,
+		"Gyro Y":5,
+		"Gyro Z":6,
+		"Temperature C":7,
+		"Temperature F":8,
+
+		"1":1,
+		"2":2
+	},
+	"translators":{
+		}
+	}
+}
