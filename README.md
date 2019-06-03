@@ -53,3 +53,7 @@ Et connectez mBlock3 à la carte par le port concerné :
 ![extension6](/images/mblock_extension6.png)
 
 Et voilà ! Vous devriez maintenant pouvoir utiliser les blocs de la bibliothèque ainsi qu'uploader le code que vous avez écrit vers la carte.
+
+### Création d'un bloc mBlock3 ###
+
+Si vous souhaitez créer vos propres blocs et les ajouter à l'extension existante, ou même créer votre propre extension, vous pouvez suivre ce [guide (attention en anglais)](https://github.com/CodeRoomPessac/OF_robotics_lib/wiki/mblock_extension_guide).

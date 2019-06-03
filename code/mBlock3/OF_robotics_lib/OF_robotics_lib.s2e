@@ -277,7 +277,7 @@ gammatable[i] = x;
 			"Efface l'écran",
 			"Efface l'écran",
 			{
-				"setup":"",
+				"setup":"lcd.begin(16, 2);\n",
 				"inc":"#include \"rgb_lcd.h\"\n",
 				"def":"rgb_lcd lcd;\n",
 				"work":"lcd.clear();\n",
@@ -310,10 +310,10 @@ gammatable[i] = x;
 		"0x0f",
 		"70",
 		{
-			"setup":"my_driver_motor_{0}.begin({0});\n",
+			"setup":"my_driver_motor_{1}.begin({1});\n",
 			"inc":"\n#include \"moteur.h\"\n",
-			"def":"I2CMotorDriver my_driver_motor_{0};\n",
-			"work":"my_driver_motor_{0}.speed({1}, {2});\n",
+			"def":"I2CMotorDriver my_driver_motor_{1};\n",
+			"work":"my_driver_motor_{1}.speed({0}, {2});\n",
 			"loop":""
 		}
 		],
@@ -324,10 +324,10 @@ gammatable[i] = x;
 		"1",
 		"0x0f",
 		{
-			"setup":"my_driver_motor_{0}.begin({0});\n",
+			"setup":"my_driver_motor_{1}.begin({1});\n",
 			"inc":"\n#include \"moteur.h\"\n",
-			"def":"I2CMotorDriver my_driver_motor_{0};\n",
-			"work":"my_driver_motor_{0}.stop({1});\n",
+			"def":"I2CMotorDriver my_driver_motor_{1};\n",
+			"work":"my_driver_motor_{1}.stop({0});\n",
 			"loop":""
 		}
 		]

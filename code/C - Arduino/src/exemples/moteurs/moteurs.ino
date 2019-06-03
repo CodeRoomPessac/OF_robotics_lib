@@ -1,5 +1,5 @@
 #include <Wire.h>
-#include "OF_moteur.h"
+#include "moteur.h"
 
 // default I2C address is 0x0f
 #define I2C_ADDRESS 0x0f
