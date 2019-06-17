@@ -14,7 +14,7 @@ Vous pourrez retrouver tout ce qui peut-être utilisé avec cette librarie dans 
 
 ### Explications concernant le nom des fichiers ###
 
-Cette bibliothèque bibliothèque utilise des fichiers déjà existant, provenant pour la plupart du [Github de Seeed Studio](https://github.com/Seeed-Studio/) ou encore du [Github de Generation Robots Lab](https://github.com/generationrobots-lab). Les fichiers ont été renommés **dans un soucis de cohérence et de clarté**, pour ceux qui souhaiterait n'utiliser que les fichiers dont ils ont besoin ou éventuellement modifier directement ceux-ci.
+Cette bibliothèque utilise en partie des fichiers déjà existant, provenant pour la plupart du [Github de Seeed Studio](https://github.com/Seeed-Studio/) ou encore du [Github de Generation Robots Lab](https://github.com/generationrobots-lab). Les fichiers ont été renommés **dans un soucis de cohérence et de clarté**, pour ceux qui souhaiterait n'utiliser que les fichiers dont ils ont besoin ou éventuellement modifier directement ceux-ci.
 Vous pouvez retrouver la correspondance entre les noms des fichiers(présents dans les en-têtes des fichiers), présentés ici sans les extensions :
 
 * capteur_ultrason <==> Ultrasonic
